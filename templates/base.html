@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+	<!--Meta descriptions-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Upload jobs and find a CAD Professional for your project">
+    
+    <!--Website title and description-->
+    <title>CADWork</title>
+
+    <!--Links to font awesome used for social icons and the css file and the bootstrap framework-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<!--This html page will have the navbar and footer that will be used on every one of the pages-->
+<body>
+    
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo-label">
+            	<!--Logo will link back to the home page-->
+                <div class="navbar-logo">
+                    <a href="{% url 'index' %}">CADWork</a>
+                </div>
+                <!--Navbar burger icon created so that effect can take place on mobile view-->
+                <div id="navbar-dropdown" class="navbar-dropdown">
+					<span class="line line1"></span>
+					<span class="line line2"></span>
+					<span class="line line3"></span>
+                </div>
+            </div>
+            <div class="navbar-links">
+	            <a class="dropdown-content-button" href="#">Home</a>
+                <a id="jobs-dropdown-link" class="dropdown-content-button" href="#">Jobs</a>
+                <div id="jobs-dropdown" class="dropdown-content">
+	                <a class="dropdown-content-link" href="#">Upload</a>
+	                <a class="dropdown-content-link" href="#">Bid</a>
+	            </div>
+                <a class="dropdown-content-button" href="#">Blog</a>
+	            <a class="dropdown-content-button" href="#">Shop</a>
+	            
+                <!--Buttons that link to pages allowing the user to sign up or login to their membership area-->
+                {% if user.is_authenticated %}
+                <!--Account link which only appears if user is logged in-->
+                <a id="meal-type" class="dropdown-content-button" href="#">Account</a>
+                <a class="btn btn-dark" href="#" role="button">Log Out</a>
+	            
+	            {% else %}
+	            <a class="btn btn-primary" href="#" role="button">Sign Up</a>
+	            <a class="btn btn-secondary" href="#" role="button">Log In</a>
+	            {% endif %}
+	            
+	            <!--The following lines will only appear in mobile views-->
+	            <div class="horizontal-rule-divider">
+	            	<div class="navbar-contents-seperate"></div>
+	            </div>
+	            <!--Social links in destop views wil be attached to the side of the page-->
+	            <div class="navbar-link"> 
+	                <div id="social" class="dropdown-content">
+	                	<a class="social-link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+	                	<a class="social-link" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+	                	<a class="social-link" href="https://www.linkedin.com/?hl=en" target="_blank"><i class="fa fa-linkedin"></i></a>
+	                </div>
+	            </div>
+	            
+	            <!--Contact and about page only appears in mobile views-->
+	            <div class="contact-about-navbar">
+	            	<div class="contact-about-navbar-links"> 
+		                <a id="about-navbar" class="contact-about-link" href="#">About</a>
+		                <a id="contact-navbar" class="contact-about-link" href="#">Contact</a>
+		                <span class="contact-about-link">&#169; 2019 CADWork</span>
+		            </div>
+	            </div>
+	            
+            </div>           
+        </div>
+    </nav>
+    
+    <!--These social icons only display where the website is being displayed on mobile views -->
+    <div class="icon-bar-desktop-views">
+		<a href="https://www.facebook.com/" target="_blank" class="icon-bar-facebook"><i class="fa fa-facebook"></i></a>
+		<a href="https://twitter.com/" target="_blank" class="icon-bar-twitter"><i class="fa fa-twitter"></i></a> 
+		<a href="https://www.linkedin.com/?hl=en" target="_blank" class="icon-bar-linkedin"><i class="fa fa-linkedin"></i></a>
+	</div>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+		<div class="footer-container">
+			<!--Social links at the top of the footer-->
+			<div class="footer-social">
+                <ul class="social-links">
+                    <li class="social"><a class="dropdown-content-link social-link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li class="social"><a class="dropdown-content-link social-link" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li class="social"><a class="dropdown-content-link social-link" href="https://www.linkedin.com/?hl=en" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <!--Links at the top of the footer section-->
+			<div class="footer-top-primary-links">
+				<!--Select the recipes by meal type-->
+				<div class="footer-section">
+					<div class="meal-types-footer-links footer-list-title" id="meal-types-footer-dropdown">Meal Types:</div>
+					<ul class="meal-types-subject-links footer-list" id="meal-types-list">
+						<li class="footer-list-item"><a class="footer-list-link" href="/snacks">Snacks</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/light_bites">Light Bites</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/main_meals">Main Meals</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/desserts">Desserts</a></li>
+					</ul>
+				</div>
+				<!--Select recipes by allergen requirements-->
+				<div class="footer-section">
+					<div class="allergens-footer-links footer-list-title" id="allergens-footer-dropdown">Allergens:</div>
+					<ul class="allergens-subject-links footer-list" id="allergens-list">
+						<li class="footer-list-item"><a class="footer-list-link" href="/nut_free">Nut Free</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/lactose_free">Lactose Free</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/gluten_free">Gluten Free</a></li>
+					</ul>
+				</div>
+				<!--Allow the user to select the pages that show the most recent and the most popular recipes-->
+				<div class="footer-section">
+					<div class="search-footer-links footer-list-title" id="search-footer-dropdown">Preference:</div>
+					<ul class="search-subject-links footer-list" id="search-list">
+						<li class="footer-list-item"><a class="footer-list-link" href="/vegetarian">Vegetarian</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/pescatarian">Pescatarian</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/vegan">Vegan</a></li>
+						<li class="footer-list-item"><a class="footer-list-link" href="/raw_vegetarian">Raw Vegetarian</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--Horizontal rule between the top section of the footer and the bottom statements-->
+			<div class="horizontal-rule-footer">
+	          	<div class="footer-contents-separate"></div>
+	        </div>
+	        <!--Bottom section of the footer-->
+            <div class="footer-statement">
+            	<!--Copyright statement-->
+            	<p class="statement">&#169; theRecipeStore</p>
+            	<div class="footer-contact-about">
+					<p class="footer-contact-about-links">
+						<!--Links to the contact and about pages-->
+						<span class="footer-contact-about-links-span"><a id="about-footer" class="terms-about-link" href="{{ url_for('about') }}">About</a></span><span class="footer-contact-about-links-divider">|</span>
+			            <span class="footer-contact-about-links-span"><a id="contact-footer" class="terms-about-link" href="{{ url_for('contact') }}">Contact</a></span>
+			        </p>
+				</div>
+            </div>
+		</div>
+	</footer>
+    
+    <!--Scripts to run-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../static/js/navbar.js"></script>
+    <script src="../static/js/navbar-contents.js"></script>
+    
+</body>
+
+</html>
