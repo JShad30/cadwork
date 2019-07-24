@@ -19,7 +19,7 @@ White colour - #FAFAFA
 
 * {
     margin: 0;
-    font-family: "", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* Footer */
+/*---------- Footer ----------*/
 /*---------- End of Footer ----------*/
 
 
@@ -356,6 +356,99 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Large tablet and small laptop screens*/
 @media(min-width: 992px) {
+    /*----------Navbar----------*/
+    
+	.navbar {
+		height: 60px;
+	}
+	
+	.navbar-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+	
+	/*Setting the margin between the left of the page and the logo*/
+    
+    .navbar-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        height: 80px;
+        margin-top: 0;
+    }
+    
+    /*Switching off the burger menu*/
+    .navbar-dropdown {
+        display: none;
+    }
+
+    .navbar-links div a {
+	    font-size: 1em;
+	    margin-left: 10px;
+	}
+
+    .dropdown-content {
+        display: flex;
+        position: absolute;
+        background-color: #36736B;
+        min-width: 100px;
+        box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.3);
+        z-index: 1;
+        padding: 0 10px 10px 10px;
+    }
+
+    .dropdown-content .dropdown-content-link {
+        line-height: 1.2em;
+        font-size: 0.9em;
+        margin: 3px 0 3px 5px;
+    }
+
+    .navbar-link {
+        height: 60px;
+    }
+
+    .navbar-links div a {
+        margin: 0 10px;
+    }
+
+    .navbar-link .dropdown-content a {
+        margin: 10px 0;
+    }
+
+    /*Bonus links in the Navbar*/
+    .navbar-contents-seperate,
+    .contact-about-navbar {
+        display: none;
+    }
+
+    /*Stopping social links from displaying*/
+    .navbar-link #social {
+        display: none;
+    }
+
+    .navbar-link-buttons {
+        margin: 0;
+        justify-content: flex-end;
+        width: 220px;
+    }
+    
+    .navbar-link-buttons-logout {
+        width: 130px;
+    }
+    
+    .sign-up-login-button {
+        margin: 0 4px;
+    }
+    
+    .my-account {
+        font-size: 1.6em;
+    }
+    
+    /*----------End of Navbar in laptop and desktop views-----------*/
+    
 }
 
 /*Larger laptop and desktop screens*/
