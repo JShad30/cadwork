@@ -2,8 +2,8 @@
 
 /*Colours to use in site*/
 /*
-blue colour - #3749B0
-dark grey - #333333
+blue colour - #007bff
+dark grey - #343a40
 White colour - #FAFAFA
 */
 
@@ -34,249 +34,140 @@ h1, h2, h3, h4, h5, h6 {
 
 /*---------- Navbar ----------*/
 .navbar {
-    position: sticky;
-    top: 0;
-	width: 100%;
-    background-color: #333333;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    z-index: 10;
-    box-shadow: 5px 5px 10px #000000;
-}
-
-.navbar-container {
-    margin: 0 10px;
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-}
-
-.navbar-logo-label {
-	height: 60px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar-logo a {
-	display: flex;
-	align-items: center;
-	font-family: "Titillium Web", sans-serif;
-	font-size: 1.6em;
-	font-weight: 700;
-	color: #3749B0;
-	text-decoration: none;
-	transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
-    text-shadow: 2px 2px 5px #000000;
-}
-
-.navbar-logo a:hover {
-    transition-property: color;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
-    color: #80C0B8;
-}
-
-/*Navbar burger icon*/
-.navbar-dropdown {
-    width: 50px;
-	font-size: 1.8em;
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-}
-
-.line {
-    position: absolute;
-    height: 3.5px;
-    width: 25px;
-    background-color: #FFFFFF;
-    border-radius: 1.75px;
-    transition: all ease-in-out 0.2s;
-}
-
-.line1 {
-    top: 22px;
-}
-
-.line2 {
-    top: 30px;   
-}
-
-.line3 {
-    top: 38px;
-}
-
-/*Controlling the cross effect when the burger menu is selected in mobile views*/
-.navbar-dropdown.close .line1{
-    transform: rotate(45deg);
-    top: 30px;
-}
-
-.navbar-dropdown.close .line2,
-.navbar-dropdown.close .line3 {
-    transform: rotate(-45deg);
-    top: 30px;
-}
-
-/*Navbar dropdown links*/
-.navbar-links {
-	display: none;
-    margin-top: 10px;
-}
-
-.navbar-links div a {
-	height: inherit;
-    display: flex;
-    align-items: center;
-    margin: 5px;
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 1.2em;
-    line-height: 1.4em;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
-    text-shadow: 1px 1px 10px #333333;
-}
-
-.navbar-links .navbar-link a:hover {
-    transition-property: color;
-    color: #80C0B8;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.1s;
-}
-
-.navbar-links.active {
-	display: flex;
-	flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown-content-button {
-    cursor: pointer;
-}
-
-/*Navbar dropdown appearance*/
-
-.dropdown-content {
-    display: flex;
-    min-width: 150px;
-    z-index: 1;
-    padding: 0 10px;
-}
-
-/*Controlling the dropdown content*/
-
-.dropdown-content .dropdown-content-link {
-	font-family: "Roboto", sans-serif;
-    line-height: 1.4em;
-	font-size: 1em;
-	transition-property: color;
-	transition-duration: 0.1s;
-	transition-timing-function: ease-in-out;
-	margin-left: 10px;
-}
-
-.dropdown-content .dropdown-content-link:hover {
-	color: #80C0B8;
-	transition-property: color;
-	transition-duration: 0.1s;
-	transition-timing-function: ease-in-out;
-}
-
-/*Search for section active and non active states for navbar-contents.js*/
-#search-link-dropdown {
-    display: none;
-}
-
-#search-link-dropdown.active {
-    display: flex;
-}
-
-/*Jobs dropdown controlled by navbar-contents.js*/
-#jobs-dropdown {
-    display: none;
-}
-
-#jobs-dropdown.active {
-    display: flex;
-}
-
-/*Social media links*/
-
-.dropdown-content .social-link {
-    margin: 10px;
-}
-
-/*contact and Conditions/About/ horizontal line appearing in mobile view*/
-
-/*Social links in mobile view*/
-#social {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
     width: 100%;
     padding: 0;
-    margin: 20px 0 30px 0;
+    box-shadow: 2px 2px 10px #000000;
 }
 
-.navbar-link div a i {
-    font-size: 1.7em;
-}
-
-/*Horizontal line that appears in mobile views*/
-.horizontal-rule-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.navbar-contents-seperate {
-    width: 50%;
-    height: 1px;
-    background-color: #FAFAFA;
-    border: 0;
-}
-
-/*Links to contact and about page that only appear in the mobile view*/
-.contact-about-navbar {
-    margin: 15px 0;
-}
-
-.contact-about-navbar-links {
+.nav-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
     align-items: flex-start;
 }
 
-.contact-about-navbar div a,
-.contact-about-navbar div span {
-    margin: 2px 5px;
+.nav-link i {
+    font-size: 1.2em;
+    margin-right: 20px;
+}
+
+.nav-buttons {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-menu {
+    position: absolute;
+    width: 100%;
+    border-color: rgba(255,255,255,0.1);
+    border-width: 0.4px;
+    width: 150px;
+    border-radius: 0;
+    border: 0.5px;
+}
+
+.dropdown-item {
+    text-transform: uppercase;
     color: #FAFAFA;
-    font-size: 0.8em;
-    font-family: "Roboto", sans-serif;
-    transition-property: color;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
-    line-height: 1.5em;
 }
 
-.contact-about-navbar div a:hover {
-    transition-property: color;
+.dropdown-item:hover {
+    background-color: #343a40;
+}
+
+.btn-primary {
+    font-size: 1.4em;
+    margin-right: 20px;
+}
+
+.dropdown-item:hover {
+    color: #007bff;
+}
+
+.navbar-container {
+    width: 85%;
+    max-width: 1200px;
+}
+
+.navbar-logo-dropdown-icon {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo a {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.navbar-logo-blue {
+    color: #007bff;
+}
+
+.navbar-logo-white {
+    color: #FAFAFA;
+    font-style: italic;
+}
+
+.navbar-dark .nav-item .nav-link {
+    text-transform: uppercase;
+    color: #fafafa;
+    font-weight: 400;
+    font-size: 1em;
+    margin-right: 5px;
     transition-duration: 0.1s;
     transition-timing-function: ease-in-out;
 }
-/*---------- End of Navbar ----------*/
+
+.navbar-dark .nav-item .nav-link:hover {
+    transition-property: color;
+    color: #007bff;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.terms-privacy-navbar-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.navbar-social-link .social-link i {
+    color: #FAFAFA;
+    font-size: 2em;
+    margin: 10px 10px 10px 0;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.navbar-social-link .social-link i:hover {
+    color: #007bff;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.terms-privacy-navbar a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms-privacy-link {
+    color: #FAFAFA;
+}
+
+.terms-privacy-navbar-divider {
+    color: #FAFAFA;
+}
+
+/*---------- End of social icons at the side of the page in desktop views ----------*/
 
 
 
@@ -284,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* Social icons at the side of the page in desktop views */
+/*----------Social link bar----------*/
 .icon-bar-desktop-views {
     top: 40%;
     position: fixed;
@@ -305,29 +196,52 @@ h1, h2, h3, h4, h5, h6 {
 
 .icon-bar-facebook {
     background-color: #3B5998;
-    color: #FAFAFA;
-    width: 30px;
+    color: #FFFFFF;
+    width: 55px;
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+}
+
+.icon-bar-facebook:hover {
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+    width: 65px;
 }
 
 .icon-bar-twitter {
     background-color: #55ACEE;
-    color: #FAFAFA;
-    width: 30px;
+    color: #FFFFFF;
+    width: 55px;
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+}
+
+.icon-bar-twitter:hover {
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+    width: 65px;
 }
 
 .icon-bar-linkedin {
     background-color: #007bb5;
-    color: #FAFAFA;
-    width: 30px;
+    color: #FFFFFF;
+    width: 55px;
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+}
+
+.icon-bar-linkedin:hover {
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+    width: 65px;
 }
 
 .icon-bar-facebook:hover,
 .icon-bar-twitter:hover,
 .icon-bar-linkedin:hover {
-    padding-left: 30px;
+    padding-left: 20px;
 }
-/*---------- End of social icons at the side of the page in desktop views ----------*/
-
+/*----------End of Social link bar----------*/
 
 
 
@@ -335,6 +249,172 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*---------- Footer ----------*/
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-top {
+    width: 100%;
+    background-color: #343a40;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    width: 85%;
+    max-width: 1200px;
+}
+
+.footer-top-container {
+    margin-top: 2.5em;
+}
+
+.footer-bottom-container {
+    margin-top: 1em;
+}
+
+.footer-section {
+    margin-bottom: 3em;
+}
+
+.footer-header {
+    color: #FAFAFA;
+    font-size: 2em;
+    margin-bottom: .6em;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.footer-paragraph {
+    color: #FAFAFA;
+    font-size: 1em;
+    line-height: 1.7em;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.footer-paragraph a {
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.footer-link {
+    font-size: 1.2em;
+    line-height: 1em;
+}
+
+.footer-paragraph a:hover {
+    transition-property: color;
+    color: #FAFAFA;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    text-decoration: none;
+}
+
+.footer-paragraph span {
+    text-decoration: underline;
+}
+
+.footer-paragraph span a {
+    color: #FAFAFA;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.footer-paragraph span a:hover {
+    transition-property: color;
+    color: #007bff;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+#footer-paragraph-phone,
+#footer-paragraph-email {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #007bff;
+}
+
+/*Social links at the top of the footer*/
+.footer-social {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    min-height: 50px;
+    margin: 30px 0;
+}
+
+.social-links {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.social {
+    margin: 0 10px;
+}
+
+.social-links li a {
+    text-decoration: none;
+}
+
+.social-links li a i {
+    font-size: 2.7em;
+    display: flex;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    color: #007bff;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.social-links li a i:hover {
+    transition-property: color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    color: #FAFAFA;
+}
+
+/* Footer copyright and terms and privacy links at the bottom*/
+.footer-statement {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statement,
+.footer-contact-about-links-span {
+    font-size: 0.8em;
+}
+
+.statement {
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact-about-links-span a {
+    color: #343a40;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.footer-contact-about-links-span a:hover {
+    text-decoration: none;
+    color: #007bff;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
 /*---------- End of Footer ----------*/
 
 
@@ -352,101 +432,63 @@ h1, h2, h3, h4, h5, h6 {
     
 /*tablet screens*/
 @media(min-width: 768px) {
+    
+    /*---------- Footer sections ----------*/
+    .footer-top-areas {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-section {
+        width: 30%;
+    }
+    
+    #footer-about-section {
+        width: 20%;
+    }
+    /*---------- End of Footer sections ----------*/
 }
 
 /*Large tablet and small laptop screens*/
 @media(min-width: 992px) {
     /*----------Navbar----------*/
+    .navbar {
+        padding: 0;
+    }
     
-	.navbar {
-		height: 60px;
-	}
-	
-	.navbar-container {
+    .navbar-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-    }
-	
-	/*Setting the margin between the left of the page and the logo*/
-    
-    .navbar-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        height: 80px;
-        margin-top: 0;
     }
     
-    /*Switching off the burger menu*/
-    .navbar-dropdown {
+    .terms-privacy-navbar {
         display: none;
     }
-
-    .navbar-links div a {
-	    font-size: 1em;
-	    margin-left: 10px;
-	}
-
-    .dropdown-content {
-        display: flex;
-        position: absolute;
-        background-color: #36736B;
-        min-width: 100px;
-        box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.3);
-        z-index: 1;
-        padding: 0 10px 10px 10px;
+    
+    .btn-primary {
+        font-size: 1em;
+        margin-right: 10px;
     }
-
-    .dropdown-content .dropdown-content-link {
-        line-height: 1.2em;
-        font-size: 0.9em;
-        margin: 3px 0 3px 5px;
-    }
-
-    .navbar-link {
-        height: 60px;
-    }
-
-    .navbar-links div a {
-        margin: 0 10px;
-    }
-
-    .navbar-link .dropdown-content a {
-        margin: 10px 0;
-    }
-
-    /*Bonus links in the Navbar*/
-    .navbar-contents-seperate,
-    .contact-about-navbar {
-        display: none;
-    }
-
-    /*Stopping social links from displaying*/
-    .navbar-link #social {
-        display: none;
-    }
-
-    .navbar-link-buttons {
+    
+    .nav-buttons {
         margin: 0;
+    }
+    
+    .navbar-social-link {
+        display: none;
+    }
+    
+    .navbar-collapse {
         justify-content: flex-end;
-        width: 220px;
     }
     
-    .navbar-link-buttons-logout {
-        width: 130px;
+    /*----------Social link bar display----------*/
+    .icon-bar-desktop-views a {
+        display: block;
     }
-    
-    .sign-up-login-button {
-        margin: 0 4px;
-    }
-    
-    .my-account {
-        font-size: 1.6em;
-    }
-    
+    /*End of social link bar display*/
     /*----------End of Navbar in laptop and desktop views-----------*/
     
 }

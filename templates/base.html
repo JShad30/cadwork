@@ -20,83 +20,73 @@
 
 <!--This html page will have the navbar and footer that will be used on every one of the pages-->
 <body>
-    
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo-label">
-            	<!--Logo will link back to the home page-->
-                <div class="navbar-logo">
-                    <h2><a href="#">CADWork</a></h2>
-                </div>
-                <!--Navbar burger icon created so that effect can take place on mobile view-->
-                <div id="navbar-dropdown" class="navbar-dropdown">
-					<span class="line line1"></span>
-					<span class="line line2"></span>
-					<span class="line line3"></span>
-                </div>
-            </div>
-            <div class="navbar-links">
-            	<div class="navbar-link">
-	            	<a class="dropdown-content-button" href="#">Home</a>
-	            </div>
-	            <div class="navbar-link">
-	                <a id="jobs-dropdown-link" class="dropdown-content-button" href="#">Jobs</a>
-	                <div id="jobs-dropdown" class="dropdown-content">
-		                <a class="dropdown-content-link" href="#">Upload</a>
-		                <a class="dropdown-content-link" href="#">Bid</a>
-		            </div>
-		        </div>
-		        <div class="navbar-link">
-                	<a class="dropdown-content-button" href="#">Blog</a>
-                </div>
-                <div class="navbar-link">
-	            	<a class="dropdown-content-button" href="#">Shop</a>
-	            </div>
-	            
-                <!--Buttons that link to pages allowing the user to sign up or login to their membership area-->
-                {% if user.is_authenticated %}
-                <!--Account link which only appears if user is logged in-->
-                <div class="navbar-link">
-                	<a id="meal-type" class="dropdown-content-button" href="#">Account</a>
-                </div>
-                <div class="navbar-link-buttons-logout">
-                	<a class="btn btn-dark" href="#" role="button">Log Out</a>
-                </div>
-	            
-	            {% else %}
-	            <div class="navbar-link-buttons">
-		            <a class="btn btn-primary" href="#" role="button">Sign Up</a>
-		            <a class="btn btn-secondary" href="#" role="button">Log In</a>
-	            </div>
-	            {% endif %}
-	            
-	            <!--The following lines will only appear in mobile views-->
-	            <div class="horizontal-rule-divider">
-	            	<div class="navbar-contents-seperate"></div>
-	            </div>
-	            <!--Social links in destop views wil be attached to the side of the page-->
-	            <div class="navbar-link"> 
-	                <div id="social" class="dropdown-content">
-	                	<a class="social-link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-	                	<a class="social-link" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
-	                	<a class="social-link" href="https://www.linkedin.com/?hl=en" target="_blank"><i class="fa fa-linkedin"></i></a>
+	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="navbar-container">
+			<div class="navbar-logo-dropdown-icon">
+			    <h2 class="navbar-logo"><a class="navbar-brand" href="#"><span class="navbar-logo-blue">CAD</span><span class="navbar-logo-white">Work</span></a></h2>
+			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			        <span class="navbar-toggler-icon"></span>
+			    </button>
+		    </div>
+		    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		        <ul class="navbar-nav ml-1">
+		        	<li class="nav-item">
+		                <a class="nav-link">Jobs</a>
+		      		</li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">Blog</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">About</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">Contact</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">Shop</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link mr-2" href="#"><i class="fa fa-shopping-cart"></i></a>
+		            </li>
+		            <!--Buttons that link to pages allowing the user to sign up or login to their membership area-->
+		            
+	                {% if user.is_authenticated %}
+	                <!--Account link which only appears if user is logged in-->
+	                <div class="nav-item">
+	                	<a class="nav-link" href="#">Account</a>
 	                </div>
+	                <div class="nav-item">
+	                	<button class="btn btn-info" href="#" role="button">Logout</button>
+	                </div>
+		            
+		            {% else %}
+		            <div class="nav-item nav-buttons">
+	                	<button class="btn btn-primary" href="#" role="button">Register</button>
+	                	<button class="btn btn-primary" href="#" role="button">Login</button>
+	                </div>
+		            {% endif %}
+		    	</ul>
+		    	<!--Social links in destop views wil be attached to the side of the page-->
+	            <div class="navbar-social-link ml-1"> 
+	                <a class="social-link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+	                <a class="social-link" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+	                <a class="social-link" href="https://www.linkedin.com/?hl=en" target="_blank"><i class="fa fa-linkedin"></i></a>
 	            </div>
-	            
-	            <!--Contact and about page only appears in mobile views-->
-	            <div class="contact-about-navbar">
-	            	<div class="contact-about-navbar-links"> 
-		                <a id="about-navbar" class="contact-about-link" href="#">About</a>
-		                <a id="contact-navbar" class="contact-about-link" href="#">Contact</a>
-		                <span class="contact-about-link">&#169; 2019 CADWork</span>
-		            </div>
-	            </div>
-	            
-            </div>           
-        </div>
-    </nav>
-    
-    <!--These social icons only display where the website is being displayed on mobile views -->
+		    	<!--Contact and about page only appears in mobile views-->
+		        <div class="terms-privacy-navbar">
+		          	<div class="terms-privacy-navbar-links"> 
+		          		<span class="terms-privacy-link">&#169; 2019 CADWork</span>
+		          		<div class="terms-privacy-navbar">
+				            <a id="terms-navbar" class="terms-privacy-link" href="#">Terms</a><span class="terms-privacy-navbar-divider"> | </span><a id="privacy-navbar" class="terms-privacy-link" href="#">Privacy</a></p>
+			            </div>
+			        </div>
+		        </div>
+		  	</div>
+		</div>
+	</nav>
+	
+    <!--These social icons only display when the website is displayed in desktop views -->
     <div class="icon-bar-desktop-views">
 		<a href="https://www.facebook.com/" target="_blank" class="icon-bar-facebook"><i class="fa fa-facebook"></i></a>
 		<a href="https://twitter.com/" target="_blank" class="icon-bar-twitter"><i class="fa fa-twitter"></i></a> 
@@ -107,63 +97,64 @@
     {% endblock %}
 
     <footer class="footer">
-		<div class="footer-container">
-			<!--Social links at the top of the footer-->
-			<div class="footer-social">
-                <ul class="social-links">
-                    <li class="social"><a class="dropdown-content-link social-link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li class="social"><a class="dropdown-content-link social-link" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li class="social"><a class="dropdown-content-link social-link" href="https://www.linkedin.com/?hl=en" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-            <!--Links at the top of the footer section-->
-			<div class="footer-top-primary-links">
-				<!--Select the recipes by meal type-->
-				<div class="footer-section">
-					<div class="meal-types-footer-links footer-list-title" id="meal-types-footer-dropdown">Meal Types:</div>
-					<ul class="meal-types-subject-links footer-list" id="meal-types-list">
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Snacks</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Light Bites</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Main Meals</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Desserts</a></li>
-					</ul>
-				</div>
-				<!--Select recipes by allergen requirements-->
-				<div class="footer-section">
-					<div class="allergens-footer-links footer-list-title" id="allergens-footer-dropdown">Allergens:</div>
-					<ul class="allergens-subject-links footer-list" id="allergens-list">
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Nut Free</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Lactose Free</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Gluten Free</a></li>
-					</ul>
-				</div>
-				<!--Allow the user to select the pages that show the most recent and the most popular recipes-->
-				<div class="footer-section">
-					<div class="search-footer-links footer-list-title" id="search-footer-dropdown">Preference:</div>
-					<ul class="search-subject-links footer-list" id="search-list">
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Vegetarian</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Pescatarian</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Vegan</a></li>
-						<li class="footer-list-item"><a class="footer-list-link" href="#">Raw Vegetarian</a></li>
-					</ul>
+		<div class="footer-top">
+			<div class="footer-container footer-top-container">
+	            <!--Links at the top of the footer section-->
+				<div class="footer-top-areas">
+					<!--Select the recipes by meal type-->
+					<div class="footer-section">
+						<h3 class="footer-header">About Us</h3>
+						<p class="footer-paragraph">CADWork is the site where you can upload or bid on jobs where CAD work is required. Get a professional design for your building project here, from inception to completion.</p>
+						<p class="footer-paragraph">For more information visit the <span class="footer-about-contact-link"><a href="#">about</a></span> page</p>
+					</div>
+					<!--Select recipes by allergen requirements-->
+					<div class="footer-section">
+						<h3 class="footer-header">Contact Us</h3>
+						<p class="footer-paragraph">Contact us by leaving us a message at the <span class="footer-about-contact-link"><a href="#">contact</a></span> page, or using the following methods below:</p>
+						<div class="footer-contact options">
+							<p class="footer-paragraph" id="footer-paragraph-phone"><a href="tel://+441234112233">+44 1234 112233</a></p>
+							<p class="footer-paragraph" id="footer-paragraph-email"><a href="mailto:info@cadwork.co.uk">info@cadwork.co.uk</a></p>
+						</div>
+						<!--Social links in the footer-->
+						<div class="footer-social">
+			                <ul class="social-links">
+			                    <li class="social"><a class="dropdown-content-link social-link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			                    <li class="social"><a class="dropdown-content-link social-link" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			                    <li class="social"><a class="dropdown-content-link social-link" href="https://www.linkedin.com/?hl=en" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+			                </ul>
+			            </div>
+	            
+					</div>
+					<!--Allow the user to select the pages that show the most recent and the most popular recipes-->
+					<div class="footer-section" id="footer-about-section">
+						<h3 class="footer-header">Useful Links</h3>
+						<p class="footer-paragraph">Visit the site:</p>
+						<div class="footer-contact options">
+							<p class="footer-paragraph footer-link"><a href="#">Jobs</a></p>
+							<p class="footer-paragraph footer-link"><a href="#">Upload Job</a></p>
+							<p class="footer-paragraph footer-link"><a href="#">Bid on a Job</a></p>
+							<p class="footer-paragraph footer-link"><a href="#">Blog</a></p>
+							<p class="footer-paragraph footer-link"><a href="#">Shop</a></p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!--Horizontal rule between the top section of the footer and the bottom statements-->
-			<div class="horizontal-rule-footer">
-	          	<div class="footer-contents-separate"></div>
+		</div>
+		<!--Bottom section of the footer-->
+		<div class="footer-bottom footer-bottom-container">
+			<div class="footer-container">
+	            <div class="footer-statement">
+	            	<!--Copyright statement-->
+	            	<p class="statement">&#169; 2019 CADWork</p>
+	            	<div class="footer-contact-about">
+						<p class="footer-contact-about-links">
+							<!--Links to the contact and about pages-->
+							<span class="footer-contact-about-links-span"><a id="about-footer" class="terms-about-link" href="#">Terms </a></span><span class="footer-contact-about-links-divider">|</span>
+				            <span class="footer-contact-about-links-span"><a id="contact-footer" class="terms-about-link" href="#">Privacy</a></span>
+				        </p>
+					</div>
+	            </div>
 	        </div>
-	        <!--Bottom section of the footer-->
-            <div class="footer-statement">
-            	<!--Copyright statement-->
-            	<p class="statement">&#169; CADWork</p>
-            	<div class="footer-contact-about">
-					<p class="footer-contact-about-links">
-						<!--Links to the contact and about pages-->
-						<span class="footer-contact-about-links-span"><a id="about-footer" class="terms-about-link" href="#">About</a></span><span class="footer-contact-about-links-divider">|</span>
-			            <span class="footer-contact-about-links-span"><a id="contact-footer" class="terms-about-link" href="#">Contact</a></span>
-			        </p>
-				</div>
-            </div>
 		</div>
 	</footer>
     
@@ -171,8 +162,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="{% static 'js/navbar.js' %}"></script>
-    <script src="{% static 'js/navbar-contents.js' %}"></script>
     
 </body>
 
