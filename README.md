@@ -2,7 +2,7 @@
 
 This project has been created for a start up that allows people to advertise jobs and bid on jobs for CAD work on small scale construction projects, whether new build extensions or interior design projects. You are able to create an account and create your job, allowing people to bid on the project. The job owner is then able to select the winning bidder and the work can begin.
 
-The site is also useful for people who want to begin in this field, with blogs available for view. Blogs are uploaded to the site by users who have an account so there are advantages to becomming a site member. The products/shop page is also for people looking to start in the industry and there are products available for them to buy, and they would be able to buy direct from the site.
+The site is also useful for people who want to begin in this field, with blogs available for view. Blogs are uploaded to the site by users who have an account so there are advantages to becoming a site member. The products/shop page is also for people looking to start in the industry and there are products available for them to buy, and they would be able to buy direct from the site.
 
 The site has been given a consistent look and feel throughout to make the user experience as good as possible. Professional fonts and colours have been used in keeping with the professional nature of the site.
 
