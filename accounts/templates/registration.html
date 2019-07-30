@@ -5,10 +5,18 @@
 {% block page_heading %} User Registration {% endblock %}
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ registration_form | as_bootstrap }}
-        <button type="submit" class="btn btn-light">Register</button>
-    </form>
-    <p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a> here</p>
+<div class="form-container">
+    <div class="registration-login-intro">
+        <h2 class="registration-login-intro-header">Register</h2>
+        <p class="registration-login-intro-paragraph ml-1">Creating an account to CADWork will enable you to upload and bid on jobs for contruction projects, as well as upload blogs. Register today to get the full benefits of being a member of CADWork.</p>
+    </div>
+    <div class="registration-login-form">
+        <form class="registration-login-form-fields" method="POST">
+            {% csrf_token %}
+            {{ registration_form | as_bootstrap }}
+            <button type="submit" class="btn btn-primary btn-block register-login-button">Register to CADWork</button>
+        </form>
+        <p>If you already have an account, you can <a href="{% url 'login' %}">log in</a> here. By registering to CADWork you accept our <a href="#">terms</a> and <a href="#">privacy policy</a>.</p>
+    </div>
+</div>
 {% endblock %}

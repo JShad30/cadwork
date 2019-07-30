@@ -4,11 +4,19 @@
 {% block page_heading %}User Login{% endblock %} 
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %} 
-        {{ login_form | as_bootstrap}}
-        <button type="submit" class="btn btn-light">Login</button>
-    </form>
-    
-    <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+<div class="form-container">
+    <div class="registration-login-intro">
+        <h2 class="registration-login-intro-header">Log In</h2>
+        <p class="registration-login-intro-paragraph ml-1">Log in to upload blogs, or bid or post a job! As a member of CADWork take advantage of the full benefits of being a member.</p>
+    </div>
+    <div class="registration-login-form">
+        <form class="registration-login-form-fields" method="POST">
+            {% csrf_token %} 
+            {{ login_form | as_bootstrap}}
+            <span><a href="{% url 'password_reset' %}">Forgotten Password?</a></span>
+            <button type="submit" class="btn btn-primary register-login-button btn-block">Login to CADWork</button>
+        </form>
+        <p>If you do not yet have an account, you can <a href="{% url 'registration' %}">register</a> to CADWork here. </p>
+    </div>
+</div>
 {% endblock %}

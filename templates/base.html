@@ -62,8 +62,8 @@
 		            
 		            {% else %}
 		            <div class="nav-item nav-buttons">
-	                	<button class="btn btn-primary" href="#" role="button">Register</button>
-	                	<button class="btn btn-primary" href="#" role="button">Login</button>
+	                	<button class="btn btn-primary" href="{% url 'registration' %}" role="button">Register</button>
+	                	<button class="btn btn-primary" href="{% url 'login' %}" role="button">Login</button>
 	                </div>
 		            {% endif %}
 		    	</ul>
@@ -93,8 +93,12 @@
 		<a href="https://www.linkedin.com/?hl=en" target="_blank" class="icon-bar-linkedin"><i class="fa fa-linkedin"></i></a>
 	</div>
 
-    {% block content %}
-    {% endblock %}
+	<div class="content">
+		<div class="content-container">
+		    {% block content %}
+		    {% endblock %}
+	    </div>
+    </div>
 
     <footer class="footer">
 		<div class="footer-top">
