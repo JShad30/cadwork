@@ -23,7 +23,7 @@ class UserRegistrationForm(UserCreationForm):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
         if User.objects.filter(email=email).exclude(username=username):
-            raise forms.ValidationError(u'A user has already een created with that email address')
+            raise forms.ValidationError(u'A user has already been created with that email address')
         return email
         
     def clean_password2(self):
